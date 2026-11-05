@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/422c3db0-272d-4a7b-a734-2375467ee661" alt="SysXz Logo" width="200"/>
-  <h1>SysXz (System X-Zee)</h1>
+  <h1>SysXz (System XZ)</h1>
   <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
   <p>
     <img src="https://img.shields.io/badge/Built_with-Buildroot-blue?style=flat-square" alt="Buildroot">
@@ -73,3 +73,8 @@ You need a Linux host (we used openSUSE) with the following tools installed:
 sudo zypper install gcc gcc-c++ make bc git patch libncurses-devel \
   wget cpio rsync unzip file tar bzip2 xz zstd findutils \
   perl python3 gawk bison flex gettext libtool
+```
+
+### warn!!:
+there is a bug on Musl and Musl-based SSHD
+that can harm the user , be aware please.
