@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="<img "https://github.com/user-attachments/assets/422c3db0-272d-4a7b-a734-2375467ee661" alt="SysXz Logo" width="200"/>
+  <img src="https://github.com/user-attachments/assets/422c3db0-272d-4a7b-a734-2375467ee661" alt="SysXz Logo" width="200"/>
   <h1>SysXz (System X-Zee)</h1>
   <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
   <p>
