@@ -50,7 +50,7 @@ SysXz is assembled using the following core technologies. This table represents 
 | Component | Technology | Why we chose it |
 | :--- | :--- | :--- |
 | **Build System** | [Buildroot](https://buildroot.org/) | Absolute control over the build process. |
-| **Kernel** | Linux 6.1 LTS | Modern hardware support with long-term stability. |
+| **Kernel** | Linux 6.1.167 LTS | Modern hardware support with long-term stability. |
 | **Init System** | [OpenRC](https://github.com/OpenRC/openrc) | Lightweight, transparent, and avoids systemd complexity. |
 | **C Library** | [musl](https://musl.libc.org/) | Fast, secure, and standards-compliant. |
 | **Package Manager** | [APK](https://gitlab.alpinelinux.org/alpine/apk-tools) | Extremely fast, built-in dependency resolution. |
@@ -75,6 +75,7 @@ sudo zypper install gcc gcc-c++ make bc git patch libncurses-devel \
   perl python3 gawk bison flex gettext libtool
 ```
 
-### warn!!:
-there is a bug on Musl and Musl-based SSHD
-that can harm the user , be aware please.
+### warn!!
+there is a bug on Musl and Musl-based with
+in the 1.2.6 and OpenSSH 16.6p2 and under it is infected so please be aware and dont
+trust any thing , for more info (https://sshhole.com/).
