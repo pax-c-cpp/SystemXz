@@ -32,14 +32,14 @@ Unlike bloated distributions, SysXz is not just another Linux distro; it is a **
 
 ## The Z Philosophy
 
-SysXz is governed by the **Z Philosophy** and **IDIORC** (*I Don't Care If It's Open or Closed*). We don't worship tools; we choose the best tool for the job based on rationality.
+SysXz is governed by the **Z Philosophy** . We don't worship tools; we choose the best tool for the job based on rationality.
 
 1.  **Efficiency:** Optimal use of CPU, RAM, and storage.
 2.  **Security:** Security is designed-in, not bolted-on.
 3.  **Privacy:** Zero telemetry. Zero tracking. Your data is yours.
 4.  **Simplicity:** Every component must justify its existence.
 5.  **Modifiability:** Easy to understand, patch, and extend.
-6.  **Freedom (IDIORC):** Quality and suitability over licensing dogmas.
+6.  **Freedom:** Quality and suitability over licensing dogmas.
 
 ---
 
@@ -78,4 +78,4 @@ sudo zypper install gcc gcc-c++ make bc git patch libncurses-devel \
 ### warn!!
 there is a bug on Musl and Musl-based with
 in the 1.2.6 and OpenSSH 16.6p2 and under it is infected so please be aware and dont
-trust any thing , for more info (https://sshhole.com/).
+trust any thing , for more info (https://sshhole.com/). also SysXz has no SSHD for this version (xz.devtest.1.0)
