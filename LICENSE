@@ -1,20 +1,38 @@
----
+SysXz Operating System
+Copyright (c) 2026 PAX (OpenC or OpenCuser)
 
-##  License: GSPL 1.1 (Gill General Source Code and Software Property License)
+--------------------------------------------------------------------------------
+MAIN LICENSE: GSPL 1.1 (Gill General Source Code and Software Property License)
+--------------------------------------------------------------------------------
+SysXz's original code, scripts, and documentation are licensed under GSPL 1.1.
+This is a "Source Available" license that permits:
+- Commercial and non-commercial use.
+- Private modifications (you are not forced to share your changes).
+- Integration with proprietary software.
+- Distribution (with copyright notices preserved).
 
-SysXz is officially licensed under the **Gill General Source Code and Software Property License (GSPL) Version 1.1**.
+You may NOT use the "SysXz" name or logo without permission.
+The software is provided "AS IS", without warranty.
 
-This license grants you the freedom to use, modify, distribute, and commercialize SysXz, whether in open-source or closed-source projects. 
+For the full GSPL 1.1 legal text, see the file named "GSPL-1.1.txt" in this directory.
 
-**Key Permissions:**
-*    **Commercial Use:** You can sell products based on SysXz.
-*    **Private Modifications:** You are not forced to share your custom changes.
-*    **Closed-Source Integration:** You can combine SysXz with proprietary software.
-*    **Source Available:** The original source code remains accessible.
+--------------------------------------------------------------------------------
+THIRD-PARTY COMPONENTS (Summary of Licenses)
+--------------------------------------------------------------------------------
+SysXz includes software from other projects. Their licenses are:
 
-**Key Conditions:**
-*    You must preserve copyright notices and the GSPL license text.
-*    You cannot use the **SysXz** name or logo to falsely imply official endorsement or to market your modified version without permission.
-*    The software is provided "AS IS" without warranty.
+- Linux Kernel      : GPLv2
+- Buildroot         : GPLv2+
+- OpenRC            : BSD 2-Clause
+- musl libc         : MIT
+- APK Tools         : GPLv2
+- Xorg              : MIT / X11
+- Mesa3D            : MIT
+- Openbox           : GPLv2+
+- Dash Shell        : BSD 3-Clause
 
-*For the full legal text, please read the [LICENSE](LICENSE) file in the root of this repository.*
+All trademarks and copyrights belong to their respective owners.
+SysXz is not affiliated with or endorsed by the Linux Foundation, Alpine, or any other project.
+
+For full license texts, refer to the source code of each package or visit:
+https://www.gnu.org/licenses/ , https://opensource.org/licenses/
