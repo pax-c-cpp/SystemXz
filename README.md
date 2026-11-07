@@ -4,7 +4,7 @@
   <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
   <p>
     <img src="https://img.shields.io/badge/Built_with-Buildroot-blue?style=flat-square" alt="Buildroot">
-    <img src="https://img.shields.io/badge/Init-OpenRC-green?style=flat-square" alt="OpenRC">
+    <img src="https://img.shields.io/badge/Init-Sysvinit-green?style=flat-square" alt="SysVinit">
     <img src="https://img.shields.io/badge/Libc-musl-orange?style=flat-square" alt="musl">
     <img src="https://img.shields.io/badge/Pkg_Manager-APK-red?style=flat-square" alt="APK">
     <img src="https://img.shields.io/badge/Philosophy-Z-purple?style=flat-square" alt="Z Philosophy">
@@ -22,7 +22,7 @@ Unlike bloated distributions, SysXz is not just another Linux distro; it is a **
 ### Key Features
 *   **Ultra-Lightweight:** No unnecessary daemons or background services.
 *   **Built from Scratch:** Powered by Buildroot for maximum control.
-*   **OpenRC Init System:** Fast, transparent, and script-based initialization (No systemd).
+*   **SysVinit Init System:** Fast, transparent, and script-based initialization (No systemd).
 *   **musl libc:** A clean, fast, and secure C standard library.
 *   **APK Package Manager:** Alpine's blazing-fast package manager, integrated natively.
 *   **Xorg + Openbox:** A minimalist, highly customizable graphical environment.
@@ -51,7 +51,7 @@ SysXz is assembled using the following core technologies. This table represents 
 | :--- | :--- | :--- |
 | **Build System** | [Buildroot](https://buildroot.org/) | Absolute control over the build process. |
 | **Kernel** | Linux 6.1.167 LTS | Modern hardware support with long-term stability. |
-| **Init System** | [OpenRC](https://github.com/OpenRC/openrc) | Lightweight, transparent, and avoids systemd complexity. |
+| **Init System** | [Sysvinit](https://codeberg.org/thejessesmith/sysvinit) | Lightweight, transparent, and avoids systemd complexity. |
 | **C Library** | [musl](https://musl.libc.org/) | Fast, secure, and standards-compliant. |
 | **Package Manager** | [APK](https://gitlab.alpinelinux.org/alpine/apk-tools) | Extremely fast, built-in dependency resolution. |
 | **Graphical Server** | [Xorg](https://www.x.org/) | Proven stability, universal compatibility. |
@@ -78,4 +78,4 @@ sudo zypper install gcc gcc-c++ make bc git patch libncurses-devel \
 ### warn!!
 there is a bug on Musl and Musl-based with
 in the 1.2.6 and OpenSSH 16.6p2 and under it is infected so please be aware and dont
-trust any thing , for more info (https://sshhole.com/). also SysXz has no SSHD for this version (xz.devtest.1.0)
+trust any thing , for more info (https://sshhole.com/). also SysXz has no SSHD for this version (xz-devtest.1.0)
