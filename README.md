@@ -4,7 +4,7 @@
   <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
   <p>
     <img src="https://img.shields.io/badge/Built_with-Buildroot-blue?style=flat-square" alt="Buildroot">
-    <img src="https://img.shields.io/badge/Init-Sysvinit-green?style=flat-square" alt="SysVinit">
+    <img src="https://img.shields.io/badge/Init-BusyBox-green?style=flat-square" alt="Busybox">
     <img src="https://img.shields.io/badge/Libc-musl-orange?style=flat-square" alt="musl">
     <img src="https://img.shields.io/badge/Pkg_Manager-APK-red?style=flat-square" alt="APK">
     <img src="https://img.shields.io/badge/Philosophy-Z-purple?style=flat-square" alt="Z Philosophy">
@@ -22,7 +22,7 @@ Unlike bloated distributions, SysXz is not just another Linux distro; it is a **
 ### Key Features
 *   **Ultra-Lightweight:** No unnecessary daemons or background services.
 *   **Built from Scratch:** Powered by Buildroot for maximum control.
-*   **SysVinit Init System:** Fast, transparent, and script-based initialization (No systemd).
+*   **busybox:** Fast, transparent, and script-based initialization (No systemd).
 *   **musl libc:** A clean, fast, and secure C standard library.
 *   **APK Package Manager:** Alpine's blazing-fast package manager, integrated natively.
 *   **Xorg + Openbox:** A minimalist, highly customizable graphical environment.
