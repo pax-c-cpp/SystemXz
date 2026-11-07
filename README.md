@@ -3,7 +3,7 @@
   <h1>SysXz (System XZ)</h1>
   <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
   <p>
-    <img src="https://img.shields.io/badge/Built_with-Buildroot-blue?style=flat-square" alt="Buildroot">
+    <img src="https://img.shields.io/badge/Built_from-Scratch-blue?style=flat-square" alt="Buildroot">
     <img src="https://img.shields.io/badge/Init-BusyBox-green?style=flat-square" alt="Busybox">
     <img src="https://img.shields.io/badge/Libc-musl-orange?style=flat-square" alt="musl">
     <img src="https://img.shields.io/badge/Pkg_Manager-APK-red?style=flat-square" alt="APK">
@@ -21,7 +21,7 @@ Unlike bloated distributions, SysXz is not just another Linux distro; it is a **
 
 ### Key Features
 *   **Ultra-Lightweight:** No unnecessary daemons or background services.
-*   **Built from Scratch:** Powered by Buildroot for maximum control.
+*   **Built from Scratch:** Powered by alpine rootfs for maximum control.
 *   **busybox:** Fast, transparent, and script-based initialization (No systemd).
 *   **musl libc:** A clean, fast, and secure C standard library.
 *   **APK Package Manager:** Alpine's blazing-fast package manager, integrated natively.
@@ -49,16 +49,16 @@ SysXz is assembled using the following core technologies. This table represents 
 
 | Component | Technology | Why we chose it |
 | :--- | :--- | :--- |
-| **Build System** | [Buildroot](https://buildroot.org/) | Absolute control over the build process. |
-| **Kernel** | Linux 6.1.167 LTS | Modern hardware support with long-term stability. |
-| **Init System** | [Sysvinit](https://codeberg.org/thejessesmith/sysvinit) | Lightweight, transparent, and avoids systemd complexity. |
+| **Build System** | [Alpine Rootfs](https://www.alpinelinux.org/) | Absolute control over the build process. |
+| **Kernel** | Linux 6.18 LTS | Modern hardware support with long-term stability. |
+| **Init System** | [OpenRC](https://github.com/OpenRC/openrc) | Lightweight, transparent, and avoids systemd complexity. |
 | **C Library** | [musl](https://musl.libc.org/) | Fast, secure, and standards-compliant. |
 | **Package Manager** | [APK](https://gitlab.alpinelinux.org/alpine/apk-tools) | Extremely fast, built-in dependency resolution. |
 | **Graphical Server** | [Xorg](https://www.x.org/) | Proven stability, universal compatibility. |
 | **Window Manager** | [Openbox](http://openbox.org/) | Minimal, fast, and highly configurable. |
 | **Display Manager** | [XDM](https://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html) | Simple GUI login, no heavy dependencies. |
 | **Graphics** | [Mesa3D](https://mesa3d.org/) | OpenGL support (GLX) for applications. |
-| **Shell** | Dash | POSIX-compliant, blazing fast `/bin/sh`. |
+| **Shell** | busybox | POSIX-compliant, blazing fast `/bin/sh`. |
 | **Toolchain** | GCC (Host) | Compiling the target system. |
 
 ---
@@ -67,15 +67,7 @@ SysXz is assembled using the following core technologies. This table represents 
 
 To build SysXz yourself, follow these steps:
 
-### Prerequisites
-You need a Linux host (we used openSUSE) with the following tools installed:
-```bash
-sudo zypper install gcc gcc-c++ make bc git patch libncurses-devel \
-  wget cpio rsync unzip file tar bzip2 xz zstd findutils \
-  perl python3 gawk bison flex gettext libtool
-```
-
 ### warn!!
 there is a bug on Musl and Musl-based with
 in the 1.2.6 and OpenSSH 16.6p2 and under it is infected so please be aware and dont
-trust any thing , for more info (https://sshhole.com/). also SysXz has no SSHD for this version (xz-devtest.1.0)
+trust any thing , for more info (https://sshhole.com/). also SysXz has SSHD for this version (xz-devtest.1.1)
