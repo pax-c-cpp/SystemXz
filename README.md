@@ -1,73 +1,81 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/422c3db0-272d-4a7b-a734-2375467ee661" alt="SysXz Logo" width="200"/>
   <h1>SysXz (System XZ)</h1>
-  <p><strong>A lightweight, secure, and rational Linux-based operating system built from scratch.</strong></p>
+  <p><strong>A Linux Distribution Built for Control and Transparency.</strong></p>
+
   <p>
-    <img src="https://img.shields.io/badge/Built_from-Scratch-blue?style=flat-square" alt="Buildroot">
-    <img src="https://img.shields.io/badge/Init-BusyBox-green?style=flat-square" alt="Busybox">
-    <img src="https://img.shields.io/badge/Libc-musl-orange?style=flat-square" alt="musl">
-    <img src="https://img.shields.io/badge/Pkg_Manager-APK-red?style=flat-square" alt="APK">
-    <img src="https://img.shields.io/badge/Philosophy-Z-purple?style=flat-square" alt="Z Philosophy">
+    <img src="https://img.shields.io/badge/Version-1.1_(DEVTest)-informational?style=flat-square" alt="Version">
+    <img src="https://img.shields.io/badge/Base-Debian_12-critical?style=flat-square&logo=debian" alt="Base">
+    <img src="https://img.shields.io/badge/Init-OpenRC-success?style=flat-square" alt="Init">
+    <img src="https://img.shields.io/badge/Desktop-Openbox-orange?style=flat-square" alt="Desktop">
+    <img src="https://img.shields.io/badge/License-GSPL_1.1-blueviolet?style=flat-square" alt="License">
   </p>
 </div>
 
 ---
 
-## What is SysXz?
+## Foreword
 
-**SysXz** (pronounced *System X-Zee*) is a custom, general-purpose Linux distribution designed for daily use and software development. It is built completely from source using **Buildroot**, ensuring that every component is optimized, secure, and serves a clear purpose.
+SystemXz was born out of a specific engineering requirement: to create a desktop operating system that respects the user's hardware resources, adheres to traditional Unix philosophies, and remains fully transparent from the bootloader to the window manager. 
 
-Unlike bloated distributions, SysXz is not just another Linux distro; it is a **statement of engineering**. It strictly adheres to the **Z Philosophy**—a set of principles focused on efficiency, security, simplicity, and rational choice.
-
-### Key Features
-*   **Ultra-Lightweight:** No unnecessary daemons or background services.
-*   **Built from Scratch:** Powered by alpine rootfs for maximum control.
-*   **busybox:** Fast, transparent, and script-based initialization (No systemd).
-*   **musl libc:** A clean, fast, and secure C standard library.
-*   **APK Package Manager:** Alpine's blazing-fast package manager, integrated natively.
-*   **Xorg + Openbox:** A minimalist, highly customizable graphical environment.
-*   **Custom Identity:** Features a unique boot logo and Z-philosophy branding.
+Unlike mainstream distributions that abstract away system internals through heavy init systems and monolithic desktop environments, SystemXz takes a deliberate step backward to move forward. It is designed for developers, system administrators, and power users who require absolute control over their environment.
 
 ---
 
-## The Z Philosophy
+## Technical Specifications (System Matrix)
 
-SysXz is governed by the **Z Philosophy** . We don't worship tools; we choose the best tool for the job based on rationality.
+To ensure full transparency, the following table details the exact core components and versions utilized in the SystemXz 1.1 (DEVTest) build.
 
-1.  **Efficiency:** Optimal use of CPU, RAM, and storage.
-2.  **Security:** Security is designed-in, not bolted-on.
-3.  **Privacy:** Zero telemetry. Zero tracking. Your data is yours.
-4.  **Simplicity:** Every component must justify its existence.
-5.  **Modifiability:** Easy to understand, patch, and extend.
-6.  **Freedom:** Quality and suitability over licensing dogmas.
-
----
-
-## Technical Stack (The Details)
-
-SysXz is assembled using the following core technologies. This table represents the exact stack used to build the system:
-
-| Component | Technology | Why we chose it |
-| :--- | :--- | :--- |
-| **Build System** | [Alpine Rootfs](https://www.alpinelinux.org/) | Absolute control over the build process. |
-| **Kernel** | Linux 6.18 LTS | Modern hardware support with long-term stability. |
-| **Init System** | [OpenRC](https://github.com/OpenRC/openrc) | Lightweight, transparent, and avoids systemd complexity. |
-| **C Library** | [musl](https://musl.libc.org/) | Fast, secure, and standards-compliant. |
-| **Package Manager** | [APK](https://gitlab.alpinelinux.org/alpine/apk-tools) | Extremely fast, built-in dependency resolution. |
-| **Graphical Server** | [Xorg](https://www.x.org/) | Proven stability, universal compatibility. |
-| **Window Manager** | [Openbox](http://openbox.org/) | Minimal, fast, and highly configurable. |
-| **Display Manager** | [XDM](https://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html) | Simple GUI login, no heavy dependencies. |
-| **Graphics** | [Mesa3D](https://mesa3d.org/) | OpenGL support (GLX) for applications. |
-| **Shell** | busybox | POSIX-compliant, blazing fast `/bin/sh`. |
-| **Toolchain** | GCC (Host) | Compiling the target system. |
+| Component | Software / Implementation | Version (Target) | Rationale |
+| :--- | :--- | :--- | :--- |
+| **Kernel** | Linux (Debian LTS) | `6.1.x` | Long-Term Support for maximum hardware compatibility and security patches. |
+| **C Library** | glibc | `2.36` | Standard Debian library; ensures binary compatibility with the vast Debian ecosystem. |
+| **Init System** | OpenRC | `0.45.x` | Replaces systemd for transparent, script-based service management. |
+| **Service Manager** | OpenRC (rc-update) | `0.45.x` | Native dependency handling without D-Bus or binary logs. |
+| **Display Server** | Xorg (X11) | `21.1.x` | Mature, stable, and universally supported display protocol. |
+| **Display Manager** | XDM | `1.1.13` | Minimalist graphical login; zero unnecessary dependencies. |
+| **Window Manager** | Openbox | `3.6.x` | Highly configurable, lightweight, and EWMH compliant. |
+| **Shell (/bin/sh)** | Dash | `0.5.12` | Strict POSIX compliance and faster execution than Bash. |
+| **Terminal Emulator** | Xterm | `379` | The standard, no-nonsense terminal for X11. |
+| **Taskbar / Panel** | Tint2 | `17.0` | Lightweight, highly customizable taskbar for Openbox. |
+| **Wallpaper Setter** | Feh | `3.9` | Fast and scriptable image viewer/wallpaper setter. |
+| **Bootloader** | GRUB 2 | `2.06` | Universal support for both Legacy BIOS and UEFI systems. |
+| **Build System** | `live-build` | `3.0` | Debian's official tool for generating hybrid ISOs. |
 
 ---
 
-## Building SysXz from Source
+## Architectural Decisions
 
-To build SysXz yourself, follow these steps:
+The architecture of SystemXz is the result of pragmatic engineering choices, not ideological dogma.
 
-### warn!!
-there is a bug on Musl and Musl-based with
-in the 1.2.6 and OpenSSH 16.6p2 and under it is infected so please be aware and dont
-trust any thing , for more info (https://sshhole.com/). also SysXz has SSHD for this version (xz-devtest.1.1)
+*   **Debian Core (glibc):** We chose Debian 12 as our base package repository and toolchain. This decision guarantees access to the most stable and extensive software repositories available in the Linux ecosystem.
+*   **OpenRC as PID 1:** We consciously removed `systemd`. OpenRC provides a transparent, script-based service management layer. It boots faster, utilizes fewer resources, and allows administrators to audit and modify service behavior without wrestling with binary logs.
+*   **Dash over Bash:** The default `/bin/sh` is linked to `dash`. This enforces strict POSIX compliance for system scripts and reduces the memory footprint during early boot stages.
+*   **Lean Graphical Stack:** Openbox and Xorg are intentionally chosen to provide a mature, responsive desktop without the overhead of a full desktop environment.
+
+---
+
+## The "Z Philosophy"
+
+The development of SystemXz is guided by an internal engineering framework known as the Z Philosophy:
+
+1.  **Efficiency:** No background daemons or services are included unless they serve a direct, immediate user purpose.
+2.  **Transparency:** Every script, configuration file, and init service is human-readable and modifiable.
+3.  **Simplicity:** We avoid abstraction layers that do not provide tangible benefits to the end-user experience.
+4.  **Control:** The system assumes the user knows what they are doing and provides the tools to do it.
+
+---
+
+## Installation & Deployment
+
+SystemXz includes a custom, interactive TUI (Text User Interface) installer written in C. It was developed to provide a lightweight, dependency-free installation process that handles disk partitioning, filesystem formatting, and bootloader deployment without the overhead of a graphical installer.
+
+To build the SystemXz ISO from source, the build environment requires `live-build` and `xorriso`.
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/SystemXz.git
+cd SystemXz/systemxz-live
+
+# Initiate the ISO build process (requires root privileges)
+sudo lb build
